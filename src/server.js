@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const auth = require("../src/middleware/auth.middleware")
 
 const app = express();
 
@@ -25,7 +24,7 @@ let categoryRouter = require('../src/routes/category.routes');
 // define root routes.
 app.use('/authentication', authRouter);
 
-app.use('/category', auth, categoryRouter);
+app.use('/category', categoryRouter);
 
 // define other routes BookMark Category News
 
